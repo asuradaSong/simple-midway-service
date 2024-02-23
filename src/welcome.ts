@@ -7,7 +7,7 @@ export class WelcomeController {
   @Inject()
   ctx: Context;
 
-  @Get('/', { summary: '接口文档界面' })
+  @Get('/', { summary: 'swagger-ui接口文档界面' })
   public async welcome() {
     this.ctx.redirect('/swagger-ui/index.html');
   }
