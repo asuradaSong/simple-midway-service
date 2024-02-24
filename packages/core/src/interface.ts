@@ -1,3 +1,4 @@
+import '@midwayjs/redis';
 /**
  * 模块配置
  */

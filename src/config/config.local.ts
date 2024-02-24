@@ -62,8 +62,8 @@ export default {
         /** 数据库帐号 */
         username: 'root',
         /** 数据库密码 */
-        // password: '940124sc',
-        password: '1234',
+        password: '940124sc',
+        // password: '1234',
         /**数据库名称 */
         database: 'sevice_db',
         /** 自动建表 注意：线上部署的时候不要使用，有可能导致数据丢失 */
@@ -118,7 +118,7 @@ export default {
       default: {
         port: 6379,
         host: '127.0.0.1',
-        password: '1234',
+        // password: '1234',
         db: 0,
       },
     },
