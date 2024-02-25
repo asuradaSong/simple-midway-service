@@ -22,7 +22,7 @@ export default {
       refererWhiteList: [
         'localhost:7001',
         '127.0.0.1:7001',
-        '192.168.220.147:7001',
+        // '192.168.220.147:7001',
       ],
     },
     xframe: {
@@ -79,7 +79,7 @@ export default {
         /** 字符集 */
         charset: 'utf8mb4',
         /** 配置实体模型以扫描形式 */
-        entities: ['modules/*/model/*.entity{.ts,.js}'],
+        entities: ['modules/*/entity/*.entity{.ts,.js}'],
       },
     },
   },
@@ -90,9 +90,16 @@ export default {
         store: createRedisStore('default'),
         options: {
           max: 100,
-          ttl: 10,
+          ttl: -1,
         },
       },
+      captcha: {
+        store: createRedisStore('default'),
+        options: {
+          max: 100,
+          ttl: -1,
+        },
+      }
     },
   },
   /** Upload 文件上传 https://www.midwayjs.org/docs/extensions/upload  */

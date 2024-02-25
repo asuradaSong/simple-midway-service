@@ -27,6 +27,7 @@ export class ImageCaptchaVo extends SuccessWrapper(ImageCaptcha) {
 export class LoginToken {
   @ApiProperty({description: '用户唯一身份令牌'})
   access_token: string;
+
   setAccessToken(token: string) {
     this.access_token = token
   }

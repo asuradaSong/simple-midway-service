@@ -5,7 +5,7 @@ import {TOKEN_KEY} from "../constant/token.constant";
 @Middleware()
 export class SecurityMiddleware implements IMiddleware<Context, NextFunction> {
   @Config('jwt.whiteList')
-  private whiteList;
+  private whiteList: RegExp[];
 
   resolve() {
     return async (ctx: Context, next: NextFunction) => {
@@ -19,6 +19,7 @@ export class SecurityMiddleware implements IMiddleware<Context, NextFunction> {
         throw new httpError.UnauthorizedError('未授权');
       }
       const [scheme, token]: string[] = parts;
+      console.log(token)
       if (/^Bearer$/i.test(scheme)) {
         await next();
       }
